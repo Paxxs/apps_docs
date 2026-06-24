@@ -21,6 +21,15 @@ describe("i18n route helpers", () => {
     expect(getLocalizedHref("cn", "/docs")).toBe("/cn/docs");
   });
 
+  test("removes an existing locale prefix when switching back to the default language", () => {
+    expect(getLocalizedHref("en", "/cn/docs/clip-smart")).toBe(
+      "/docs/clip-smart",
+    );
+    expect(getLocalizedHref("en", "/en/docs/clip-smart")).toBe(
+      "/docs/clip-smart",
+    );
+  });
+
   test("generates prefixed static language params for non-default languages only", () => {
     expect(getPrefixedLanguageStaticParams()).toEqual([{ lang: "cn" }]);
   });

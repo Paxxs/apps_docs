@@ -18,8 +18,21 @@ export function getPrefixedLanguageStaticParams() {
   return getPrefixedLanguages().map((lang) => ({ lang }));
 }
 
+function stripLocalePrefix(path: string) {
+  const segments = path.replace(/^\/+/, "").split("/").filter(Boolean);
+
+  if (
+    segments[0] &&
+    (i18n.languages as readonly string[]).includes(segments[0])
+  ) {
+    segments.shift();
+  }
+
+  return segments.join("/");
+}
+
 export function getLocalizedHref(locale: string, path = "/") {
-  const normalizedPath = path === "/" ? "" : path.replace(/^\/+/, "");
+  const normalizedPath = path === "/" ? "" : stripLocalePrefix(path);
   const prefix = isDefaultLanguage(locale) ? "" : `/${locale}`;
 
   if (normalizedPath.length === 0) return prefix || "/";
