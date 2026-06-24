@@ -1,6 +1,6 @@
 {
   "title": "TextRelay",
-  "description": "The description of root folder (optional)",
+  "description": "A local-first plain-text relay for temporary text workflows.",
   "icon": "RemoveFormatting",
   "root": true
 }

@@ -1,6 +1,6 @@
 {
   "title": "LastTime",
-  "description": "The description of root folder (optional)",
+  "description": "A calm dashboard for tracking when recurring life maintenance was last done.",
   "root": true,
   "icon": "GalleryHorizontal",
   "defaultOpen": true

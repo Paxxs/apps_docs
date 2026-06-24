@@ -1,6 +1,6 @@
 {
   "title": "ClipSmart",
-  "description": "The description of root folder (optional)",
+  "description": "Offline tools for text selection, screenshot clipping, and keyboard testing.",
   "icon": "SquareDashedMousePointer",
   "root": true
 }

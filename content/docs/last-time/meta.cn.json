@@ -1,8 +1,7 @@
 {
   "title": "LastTime",
-  "description": "LastTime 文档",
+  "description": "用于记录周期性生活维护事项上次完成时间的安静仪表盘文档。",
   "root": true,
   "icon": "GalleryHorizontal",
   "defaultOpen": true
 }
-

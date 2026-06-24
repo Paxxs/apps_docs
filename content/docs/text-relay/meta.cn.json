@@ -1,7 +1,6 @@
 {
   "title": "TextRelay",
-  "description": "TextRelay 文档",
+  "description": "面向临时文本处理流程的本地优先纯文本中转工具文档。",
   "icon": "RemoveFormatting",
   "root": true
 }
-

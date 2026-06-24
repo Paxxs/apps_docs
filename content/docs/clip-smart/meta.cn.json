@@ -1,7 +1,6 @@
 {
   "title": "ClipSmart",
-  "description": "ClipSmart 文档",
+  "description": "离线处理文本选择、截图裁剪和键盘测试的工具文档。",
   "icon": "SquareDashedMousePointer",
   "root": true
 }
-

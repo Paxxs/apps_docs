@@ -1,6 +1,6 @@
 {
   "title": "ExifSnap",
-  "description": "The description of root folder (optional)",
+  "description": "View and edit image EXIF metadata on iPhone, iPad, and Mac.",
   "icon": "ImageUp",
   "root": true
 }
