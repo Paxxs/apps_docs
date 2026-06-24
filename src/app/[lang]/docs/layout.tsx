@@ -1,22 +1,30 @@
-import { source } from "@/lib/source";
 import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import { baseOptions } from "@/lib/layout.shared";
-import {
-  AISearch,
-  AISearchPanel,
-  AISearchTrigger,
-} from "@/components/ai/search";
-import { MessageCircleIcon } from "lucide-react";
-import { cn } from "@/lib/cn";
-import { buttonVariants } from "fumadocs-ui/components/ui/button";
+import { source } from "@/lib/source";
+
+const enableAISearch = process.env.NEXT_PUBLIC_ENABLE_AI_SEARCH === "true";
 
 export default async function Layout({
   params,
   children,
 }: LayoutProps<"/[lang]/docs">) {
   const { lang } = await params;
-  return (
-    <DocsLayout tree={source.getPageTree(lang)} {...baseOptions(lang)}>
+  let aiSearch = null;
+
+  if (enableAISearch) {
+    const [
+      { AISearch, AISearchPanel, AISearchTrigger },
+      { MessageCircleIcon },
+      { cn },
+      { buttonVariants },
+    ] = await Promise.all([
+      import("@/components/ai/search"),
+      import("lucide-react"),
+      import("@/lib/cn"),
+      import("fumadocs-ui/components/ui/button"),
+    ]);
+
+    aiSearch = (
       <AISearch>
         <AISearchPanel />
         <AISearchTrigger
@@ -32,7 +40,12 @@ export default async function Layout({
           Ask AI
         </AISearchTrigger>
       </AISearch>
+    );
+  }
 
+  return (
+    <DocsLayout tree={source.getPageTree(lang)} {...baseOptions(lang)}>
+      {aiSearch}
       {children}
     </DocsLayout>
   );

@@ -1,9 +1,9 @@
-import { RootProvider } from "fumadocs-ui/provider/next";
-
-import { translations } from "@/lib/layout.shared";
 import { i18nProvider } from "fumadocs-ui/i18n";
+import { RootProvider } from "fumadocs-ui/provider/next";
+import { translations } from "@/lib/layout.shared";
 import "@/app/global.css";
 import { Inter } from "next/font/google";
+import { i18n } from "@/lib/i18n";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,4 +23,8 @@ export default async function Layout({
       </body>
     </html>
   );
+}
+
+export function generateStaticParams() {
+  return i18n.languages.map((lang) => ({ lang }));
 }

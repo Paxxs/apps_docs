@@ -1,4 +1,5 @@
 import { getLocalizedHref } from "./i18n";
+import { withBasePath } from "./shared";
 
 const githubUrl = "https://github.com/Paxxs";
 
@@ -64,7 +65,7 @@ export function getHomeContent(locale: string) {
     sections: content.sections,
     primaryAction: {
       label: content.primaryActionLabel,
-      href: getLocalizedHref(supportedLocale, "/docs"),
+      href: withBasePath(getLocalizedHref(supportedLocale, "/docs")),
     },
     secondaryAction: {
       label: content.secondaryActionLabel,

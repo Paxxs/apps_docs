@@ -1,12 +1,15 @@
 import { docs } from "collections/server";
 import { loader } from "fumadocs-core/source";
 import { lucideIconsPlugin } from "fumadocs-core/source/lucide-icons";
-import { docsContentRoute, docsImageRoute, docsRoute } from "./shared";
-
-import { icons, NewspaperIcon } from "lucide-react";
-
+import { icons } from "lucide-react";
 import { createElement } from "react";
 import { i18n } from "@/lib/i18n";
+import {
+  docsContentRoute,
+  docsImageRoute,
+  docsRoute,
+  withBasePath,
+} from "./shared";
 
 // See https://fumadocs.dev/docs/headless/source-api for more info
 export const source = loader({
@@ -31,7 +34,7 @@ export function getPageImage(page: (typeof source)["$inferPage"]) {
 
   return {
     segments,
-    url: `${docsImageRoute}/${segments.join("/")}`,
+    url: withBasePath(`${docsImageRoute}/${segments.join("/")}`),
   };
 }
 
@@ -40,7 +43,7 @@ export function getPageMarkdownUrl(page: (typeof source)["$inferPage"]) {
 
   return {
     segments,
-    url: `${docsContentRoute}/${segments.join("/")}`,
+    url: withBasePath(`${docsContentRoute}/${segments.join("/")}`),
   };
 }
 
