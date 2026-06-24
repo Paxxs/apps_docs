@@ -15,7 +15,7 @@ describe("localized home content", () => {
     ]);
     expect(content.primaryAction).toEqual({
       label: "Explore Documentation",
-      href: "/en/docs",
+      href: "/docs",
     });
     expect(content.secondaryAction).toEqual({
       label: "Visit GitHub",
