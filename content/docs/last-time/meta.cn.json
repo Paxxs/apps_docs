@@ -2,6 +2,5 @@
   "title": "LastTime",
   "description": "用于记录周期性生活维护事项上次完成时间的仪表盘",
   "root": true,
-  "icon": "GalleryHorizontal",
-  "defaultOpen": true
+  "icon": "GalleryHorizontal"
 }

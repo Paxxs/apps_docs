@@ -43,8 +43,8 @@ const localizedHomeContent = {
     secondaryActionLabel: "访问 GitHub",
     footerNote: "用心设计，精心打磨",
     nav: {
-      title: "APP·PRO 文档",
-      docsLabel: "文档",
+      title: "APP·PRO",
+      docsLabel: "文档首页",
     },
   },
 } as const;
