@@ -1,20 +1,12 @@
-import { withBasePath } from "@/lib/shared";
+import { HomeLayout } from "fumadocs-ui/layouts/home";
+import { HomePageContent } from "@/components/home-page";
+import { i18n } from "@/lib/i18n";
+import { baseOptions } from "@/lib/layout.shared";
 
 export default function RootPage() {
-  const defaultHref = withBasePath("/en/");
-
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center gap-4 p-8 text-center">
-      <meta httpEquiv="refresh" content={`0; url=${defaultHref}`} />
-      <h1 className="text-3xl font-semibold">APP.PRO Docs</h1>
-      <div className="flex flex-wrap items-center justify-center gap-3">
-        <a className="underline underline-offset-4" href={defaultHref}>
-          English
-        </a>
-        <a className="underline underline-offset-4" href={withBasePath("/cn/")}>
-          Chinese
-        </a>
-      </div>
-    </main>
+    <HomeLayout {...baseOptions(i18n.defaultLanguage)}>
+      <HomePageContent locale={i18n.defaultLanguage} />
+    </HomeLayout>
   );
 }

@@ -4,7 +4,7 @@ import { translations } from "@/lib/layout.shared";
 import "@/app/global.css";
 import { Inter } from "next/font/google";
 import SearchDialog from "@/components/search";
-import { i18n } from "@/lib/i18n";
+import { getPrefixedLanguageStaticParams } from "@/lib/i18n";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,5 +30,5 @@ export default async function Layout({
 }
 
 export function generateStaticParams() {
-  return i18n.languages.map((lang) => ({ lang }));
+  return getPrefixedLanguageStaticParams();
 }

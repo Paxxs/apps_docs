@@ -1,5 +1,9 @@
 import { describe, expect, test } from "bun:test";
-import { getLocalizedHref, i18n } from "../src/lib/i18n.ts";
+import {
+  getLocalizedHref,
+  getPrefixedLanguageStaticParams,
+  i18n,
+} from "../src/lib/i18n.ts";
 
 describe("i18n route helpers", () => {
   test("configures the default locale to be hidden from generated URLs", () => {
@@ -15,5 +19,9 @@ describe("i18n route helpers", () => {
   test("keeps non-default locale prefixes in URLs", () => {
     expect(getLocalizedHref("cn")).toBe("/cn");
     expect(getLocalizedHref("cn", "/docs")).toBe("/cn/docs");
+  });
+
+  test("generates prefixed static language params for non-default languages only", () => {
+    expect(getPrefixedLanguageStaticParams()).toEqual([{ lang: "cn" }]);
   });
 });
