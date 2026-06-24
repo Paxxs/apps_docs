@@ -6,6 +6,7 @@ import { docsContentRoute, docsImageRoute, docsRoute } from "./shared";
 import { icons, NewspaperIcon } from "lucide-react";
 
 import { createElement } from "react";
+import { i18n } from "@/lib/i18n";
 
 // See https://fumadocs.dev/docs/headless/source-api for more info
 export const source = loader({
@@ -22,6 +23,7 @@ export const source = loader({
 
     if (icon in icons) return createElement(icons[icon as keyof typeof icons]);
   },
+  i18n,
 });
 
 export function getPageImage(page: (typeof source)["$inferPage"]) {
