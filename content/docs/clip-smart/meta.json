@@ -1,6 +1,6 @@
 {
   "title": "ClipSmart",
-  "description": "Offline tools for text selection, screenshot clipping, and keyboard testing.",
+  "description": "An app built entirely on iPadOS.",
   "icon": "SquareDashedMousePointer",
   "root": true
 }

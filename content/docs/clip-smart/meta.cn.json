@@ -1,6 +1,6 @@
 {
   "title": "ClipSmart",
-  "description": "离线处理文本选择、截图裁剪和键盘测试的工具文档。",
+  "description": "一个在纯 iPadOS 上编写的应用",
   "icon": "SquareDashedMousePointer",
   "root": true
 }

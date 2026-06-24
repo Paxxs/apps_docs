@@ -1,6 +1,6 @@
 {
   "title": "ExifSnap",
-  "description": "View and edit image EXIF metadata on iPhone, iPad, and Mac.",
+  "description": "Quickly view, copy, and edit image EXIF metadata.",
   "icon": "ImageUp",
   "root": true
 }

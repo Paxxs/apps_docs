@@ -1,6 +1,6 @@
 {
   "title": "TextRelay",
-  "description": "A local-first plain-text relay for temporary text workflows.",
+  "description": "A temporary text relay with fully local smart text segmentation.",
   "icon": "RemoveFormatting",
   "root": true
 }

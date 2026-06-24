@@ -1,6 +1,6 @@
 {
   "title": "ExifSnap",
-  "description": "在 iPhone、iPad 和 Mac 上查看与修改图片 EXIF 元数据的文档。",
+  "description": "快速查看复制与修改图片 EXIF 元数据",
   "icon": "ImageUp",
   "root": true
 }

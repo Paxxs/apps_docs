@@ -1,6 +1,6 @@
 {
   "title": "TextRelay",
-  "description": "面向临时文本处理流程的本地优先纯文本中转工具文档。",
+  "description": "临时文本中转站，纯本地智能分词工具",
   "icon": "RemoveFormatting",
   "root": true
 }
