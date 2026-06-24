@@ -1,0 +1,7 @@
+{
+  "title": "LastTime",
+  "description": "The description of root folder (optional)",
+  "root": true,
+  "icon": "GalleryHorizontal",
+  "defaultOpen": true
+}
