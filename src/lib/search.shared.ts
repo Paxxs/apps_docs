@@ -32,6 +32,13 @@ export const searchTags = [
       cn: "TextRelay",
     },
   },
+  {
+    value: "keep-screen-on",
+    labels: {
+      en: "KeepScreenOn",
+      cn: "KeepScreenOn",
+    },
+  },
 ] as const;
 
 export type SearchLocale = "en" | "cn";

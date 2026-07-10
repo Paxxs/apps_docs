@@ -1,4 +1,4 @@
 {
   "description": "Product documentation, usage guides, and privacy policies for AppPro apps.",
-  "pages": ["clip-smart", "last-time", "exif-snap", "text-relay"]
+  "pages": ["clip-smart", "last-time", "exif-snap", "text-relay", "keep-screen-on"]
 }

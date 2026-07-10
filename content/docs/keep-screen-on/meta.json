@@ -1,0 +1,6 @@
+{
+  "title": "KeepScreenOn",
+  "description": "Preview shared content and keep the screen awake for hands-off viewing.",
+  "icon": "Sun",
+  "root": true
+}
