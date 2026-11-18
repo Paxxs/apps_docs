@@ -1,8 +1,5 @@
 "use client";
-import { create } from "@orama/orama";
-import { createTokenizer as createMandarinTokenizer } from "@orama/tokenizers/mandarin";
-import { useDocsSearch } from "fumadocs-core/search/client";
-import { oramaStaticClient } from "fumadocs-core/search/client/orama-static";
+import { useStaticSearch } from "fumadocs-core/search/client/orama-static";
 import {
   SearchDialog,
   SearchDialogClose,
@@ -21,50 +18,19 @@ import { useI18n } from "fumadocs-ui/contexts/i18n";
 import { useState } from "react";
 import { getSearchTagItems, searchApiUrl } from "@/lib/search.shared";
 
-function initOrama(locale?: string) {
-  if (locale === "cn") {
-    return create({
-      schema: { _: "string" },
-      components: {
-        tokenizer: createMandarinTokenizer(),
-      },
-    });
-  }
-
-  return create({
-    schema: { _: "string" },
-    // https://docs.orama.com/docs/orama-js/supported-languages
-    language: "english",
-  });
-}
-
 export default function DefaultSearchDialog(props: SharedProps) {
   const [tag, setTag] = useState<string | undefined>();
   const { locale } = useI18n();
   const tags = getSearchTagItems(locale ?? "en");
-  const { search, setSearch, query } = useDocsSearch({
-    client: oramaStaticClient({
-      from: searchApiUrl,
-      initOrama,
-      locale,
-      tag,
-      search:
-        locale === "cn"
-          ? {
-              threshold: 0,
-              tolerance: 0,
-            }
-          : undefined,
-    }),
+  const search = useStaticSearch({
+    from: searchApiUrl,
+    locale,
+    tag,
+    search: locale === "cn" ? { threshold: 0, tolerance: 0 } : undefined,
   });
 
   return (
-    <SearchDialog
-      search={search}
-      onSearchChange={setSearch}
-      isLoading={query.isLoading}
-      {...props}
-    >
+    <SearchDialog {...search} {...props}>
       <SearchDialogOverlay />
       <SearchDialogContent>
         <SearchDialogHeader>
@@ -72,7 +38,7 @@ export default function DefaultSearchDialog(props: SharedProps) {
           <SearchDialogInput />
           <SearchDialogClose />
         </SearchDialogHeader>
-        <SearchDialogList items={query.data !== "empty" ? query.data : null} />
+        <SearchDialogList />
         <SearchDialogFooter className="flex flex-row">
           <TagsList tag={tag} onTagChange={setTag} allowClear>
             {tags.map((item) => (
