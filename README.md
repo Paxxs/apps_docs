@@ -3,17 +3,16 @@
 This is a Next.js application generated with
 [Create Fumadocs](https://github.com/fuma-nama/fumadocs).
 
-Run development server:
+Use Node.js 22 or newer and the Bun version in `package.json`. Start the development server with:
 
 ```bash
-npm run dev
-# or
-pnpm dev
-# or
-yarn dev
+bun install --frozen-lockfile
+bun run dev
 ```
 
-Open http://localhost:3000 with your browser to see the result.
+Open http://localhost:3000. For GitHub Pages, `bun run build:static` writes the site and bilingual search index to `out/`.
+
+To enable AI chat on a Node.js server, set `NEXT_PUBLIC_ENABLE_AI_SEARCH=true` for both `bun run build` and `bun run start`. Supply `OPENROUTER_API_KEY` to the server at runtime. The default model is `anthropic/claude-sonnet-5.5`. Set `OPENROUTER_MODEL` to choose another model with tool support.
 
 ## Explore
 
