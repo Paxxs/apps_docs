@@ -4,8 +4,6 @@ import { i18n } from "@/lib/i18n";
 export default createI18nMiddleware(i18n);
 
 export const config = {
-  // Matcher ignoring `/_next/`, `/api/`, and public assets.
-  matcher: [
-    "/((?!api|_next/static|_next/image|images/|icons/|favicon.ico|logo.svg).*)",
-  ],
+  // English already has its own unprefixed routes. Redirect only the legacy alias.
+  matcher: ["/en/:path*"],
 };
