@@ -54,8 +54,8 @@ describe("localized home content", () => {
       docsLabel: "Documentation",
     });
     expect(getNavContent("cn")).toEqual({
-      title: "APP·PRO 文档",
-      docsLabel: "文档",
+      title: "APP·PRO",
+      docsLabel: "文档首页",
     });
   });
 });
