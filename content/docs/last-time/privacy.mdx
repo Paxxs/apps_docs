@@ -5,8 +5,8 @@ description: Privacy policy for LastTime
 
 # LastTime Privacy Policy
 
-> Last updated: June 20, 2026  
-> Effective date: June 20, 2026  
+> Last updated: November 18, 2026
+> Effective date: November 18, 2026
 
 This Privacy Policy explains how LastTime, also displayed as 上次, handles information. LastTime is a local-first personal life maintenance app that helps you record when recurring activities were last completed.
 
@@ -16,14 +16,14 @@ By using LastTime, you agree to the practices described in this Privacy Policy.
 
 LastTime is designed to keep your personal activity records under your control.
 
-- LastTime stores your maintenance items, completion history, preferences, and related app data locally on your device by default.
+- LastTime stores your maintenance items and completion history locally on your device by default. If you turn on iCloud Sync, the data needed to sync those items and their history is also sent to Apple's CloudKit service and stored in your private iCloud database.
 - LastTime does not create an account for you and does not require you to sign in.
-- LastTime does not operate a custom backend for storing your personal activity content.
+- LastTime does not operate its own server or backend for storing or syncing your personal activity content. Sync is provided by Apple CloudKit, not by a LastTime server.
 - LastTime does not sell your personal information.
 - LastTime does not use third-party advertising, advertising identifiers, or behavioral tracking.
 - LastTime does not use third-party analytics SDKs for the current version.
 
-Limited network connections may occur for App Store purchases, purchase restoration, and purchase verification as described below.
+Network connections may occur for optional iCloud Sync and for App Store purchases, purchase restoration, and purchase verification as described below.
 
 ## 2. Information Stored on Your Device
 
@@ -31,16 +31,19 @@ When you use LastTime, you may create or edit information such as:
 
 - Maintenance item names
 - Completion dates and completion history
-- Item appearance, ordering, and app preferences
+- Item appearance and app preferences
+- Optional completion notes, archive status, and per-item reminder settings
 - Pro unlock state and related local entitlement status
 
-This information is stored locally on your device using the app's local storage. We do not receive, upload, sell, rent, or share this personal activity content.
+Your maintenance items and completion history are stored locally using the app's local storage. If you enable iCloud Sync in the app, maintenance item details (such as names, icons, colors, recommended intervals, archive status, and reminder settings), completion dates and optional notes, and the changes needed to keep records in sync are transmitted to Apple's CloudKit service. Apple stores this data in the private iCloud database associated with the Apple Account signed in to iCloud on your device, so your devices using that same account can sync it. LastTime does not receive or store this synced content on its own servers, and does not send it to an analytics or advertising service. Display preferences such as sorting and filtering are not part of the synced records and remain local. Apple processes iCloud data under Apple's terms and privacy policy.
 
-You can delete your local app data by deleting records inside the app where available, or by removing the app from your device. Your operating system may retain backups according to your device, Apple ID, iCloud, or backup settings.
+Reminder schedules are created locally by iOS on your device; LastTime does not send your reminder content to a push-notification provider. App preferences that are not part of the synced maintenance items and completion history remain local.
+
+You can turn off iCloud Sync in the app's settings. Turning sync off stops further synchronization from that device but does not itself delete data already stored in iCloud. When sync is enabled, deleting a synced item or completion record sends a deletion change to iCloud so that it can be applied on your other devices. You can delete local app data by deleting records inside the app where available, or by removing the app from your device. Apple may retain iCloud data or backups according to its service behavior, your Apple Account, and your iCloud settings.
 
 ## 3. Information We Do Not Collect
 
-LastTime does not collect or transmit:
+LastTime does not collect or transmit to LastTime or its own servers:
 
 - Your name, email address, phone number, or contact list
 - Location data
@@ -48,7 +51,7 @@ LastTime does not collect or transmit:
 - Calendar data
 - Health data
 - Clipboard contents
-- Maintenance item names or completion records
+- Maintenance item names or completion records when iCloud Sync is off
 - Advertising identifiers
 - Analytics events describing your app usage
 
@@ -75,13 +78,14 @@ LastTime may use system capabilities for in-app purchases, local storage, locali
 LastTime may rely on the following third-party or platform services for limited operational purposes:
 
 - Apple App Store, for in-app purchases, purchase restoration, refunds, and receipt handling
+- Apple CloudKit, only if you enable iCloud Sync, to store and sync your records in your private iCloud database
 - The purchase verification provider used by the app, for validating Pro unlock status
 
 These services may process technical or transaction information according to their own privacy policies. LastTime does not use third-party advertising networks or third-party analytics SDKs.
 
 ## 7. Data Retention
 
-Personal activity content created in LastTime remains on your device until you delete it, reset the app data, or uninstall the app, subject to your operating system and backup settings.
+When iCloud Sync is off, personal activity content remains on your device until you delete it, reset the app data, or uninstall the app, subject to your operating system and backup settings. When sync is on, current records are stored both locally and in your private iCloud database. Deletions are synced to your other devices; a limited deletion marker may remain in iCloud to ensure that the deletion is applied consistently. Turning sync off does not itself remove previously synced data from iCloud. Apple may retain iCloud data or backups according to its service behavior and your iCloud settings.
 
 Purchase records and refund history may be retained by Apple as required for App Store operations, tax, fraud prevention, accounting, legal compliance, and customer support.
 
@@ -93,11 +97,11 @@ If you believe a child has provided personal information to us through a direct 
 
 ## 9. Security
 
-LastTime is designed to minimize data exposure by keeping personal activity content on your device. No method of storage or transmission is completely secure, so we recommend keeping your device, operating system, and Apple ID protected with appropriate security settings.
+LastTime is designed to minimize data exposure by keeping personal activity content on your device by default and using Apple's private CloudKit database when you opt in to sync. No method of storage or transmission is completely secure. iCloud data is subject to Apple's security practices and terms, so we recommend protecting your device and Apple Account with appropriate security settings.
 
 ## 10. International Processing
 
-Platform and operational services such as Apple App Store and purchase verification may process information in countries or regions outside your own. Such processing is governed by the relevant service provider's terms and privacy policy.
+Apple may process or store iCloud Sync data, App Store purchase information, and purchase verification information in countries or regions outside your own. Such processing is governed by Apple's and the relevant service provider's terms and privacy policies.
 
 ## 11. Changes to This Privacy Policy
 
