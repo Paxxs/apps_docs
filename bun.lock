@@ -453,7 +453,7 @@
 
     "bail": ["bail@2.0.2", "https://registry.npmmirror.com/bail/-/bail-2.0.2.tgz", {}, "sha512-0xO6mYd7JB2YesxDKplafRpsiOzPt9V02ddPCLbY1xYGPOX24NTyN50qnUxgCPcSoYMhKpAuBTjQoRZCAkUDRw=="],
 
-    "baseline-browser-mapping": ["baseline-browser-mapping@2.10.38", "https://registry.npmmirror.com/baseline-browser-mapping/-/baseline-browser-mapping-2.10.38.tgz", { "bin": { "baseline-browser-mapping": "dist/cli.cjs" } }, "sha512-31/02mVB4yuQU6adKk5SlY6m+mxDwUq5KZkyYgnLrrKl7TEm1+3PyDtDBz2kOv/wxZz41GHsvV1A/u6RmiyBvw=="],
+    "baseline-browser-mapping": ["baseline-browser-mapping@2.11.0", "", { "bin": { "baseline-browser-mapping": "dist/cli.cjs" } }, "sha512-oCu2wfipvX3AePSgmOuKkIywOu+8n9psz7hXYmk56ghpu3+7KzNIBopaOs4c9BrtdnTtW30unG9GTfHo7EwERQ=="],
 
     "caniuse-lite": ["caniuse-lite@1.0.30001799", "https://registry.npmmirror.com/caniuse-lite/-/caniuse-lite-1.0.30001799.tgz", {}, "sha512-hG1bReV+OUU+MOqK4t/ZWI0tZOyz3rqS9XuhOUz1cIcbwBKjOyJEJuw9ER5JuNyqxNk8u/JUVbGibBOL1yrjFw=="],
 
