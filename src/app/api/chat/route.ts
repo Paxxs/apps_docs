@@ -81,9 +81,10 @@ export async function POST(req: Request) {
     tools: {
       search: searchTool,
     },
-    messages: [
-      { role: "system", content: systemPrompt },
-      ...(await convertToModelMessages<ChatUIMessage>(reqJson.messages ?? [], {
+    instructions: systemPrompt,
+    messages: await convertToModelMessages<ChatUIMessage>(
+      reqJson.messages ?? [],
+      {
         convertDataPart(part) {
           if (part.type === "data-client")
             return {
@@ -91,8 +92,8 @@ export async function POST(req: Request) {
               text: `[Client Context: ${JSON.stringify(part.data)}]`,
             };
         },
-      })),
-    ],
+      },
+    ),
     toolChoice: "auto",
   });
 
