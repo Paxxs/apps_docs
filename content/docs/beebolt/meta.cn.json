@@ -1,0 +1,6 @@
+{
+  "title": "BeeBolt",
+  "description": "多标签浏览器、多线程下载器与桌面级局域网文件管理器",
+  "icon": "FolderSync",
+  "root": true
+}

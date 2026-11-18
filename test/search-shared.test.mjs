@@ -20,18 +20,24 @@ describe("search shared configuration", () => {
       "last-time",
       "exif-snap",
       "text-relay",
+      "keep-screen-on",
+      "beebolt",
     ]);
     expect(getSearchTagItems("en").map((tag) => tag.name)).toEqual([
       "ClipSmart",
       "LastTime",
       "ExifSnap",
       "TextRelay",
+      "KeepScreenOn",
+      "BeeBolt",
     ]);
     expect(getSearchTagItems("cn").map((tag) => tag.name)).toEqual([
       "ClipSmart",
       "LastTime",
       "ExifSnap",
       "TextRelay",
+      "KeepScreenOn",
+      "BeeBolt",
     ]);
   });
 

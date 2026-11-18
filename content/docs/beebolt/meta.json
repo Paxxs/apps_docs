@@ -1,0 +1,6 @@
+{
+  "title": "BeeBolt",
+  "description": "A tabbed browser, multi-threaded downloader, and desktop-class LAN file manager.",
+  "icon": "FolderSync",
+  "root": true
+}

@@ -1,0 +1,98 @@
+---
+title: Privacy Policy
+description: Privacy policy for BeeBolt
+---
+
+# BeeBolt Privacy Policy
+
+> Last updated: November 18, 2026
+
+BeeBolt is a local-first file manager, tabbed browser, and downloader for iPhone and iPad. This policy explains what stays on your device, what leaves it when you browse or download, and what BeeBolt does not do with your information.
+
+## Summary
+
+- BeeBolt has no account system and does not require you to sign in
+- BeeBolt does not operate a backend that stores your files, history, bookmarks, or downloads
+- BeeBolt does not include third-party analytics, advertising, or tracking SDKs
+- BeeBolt does not sell your personal information
+- Your files and app data stay on your device unless you choose to share, export, or upload them
+
+The App Store privacy label for BeeBolt is **Data Not Collected**. The sections below explain the network connections that still happen when you use the app.
+
+## Information Stored On Your Device
+
+BeeBolt keeps its working data locally:
+
+- **Files** — downloaded, imported, compressed, or extracted files live in the app's Documents folder. That folder is exposed to Apple's Files app, so you can view, copy, or manage the same files there.
+- **Browsing data** — history and bookmarks are stored in the app's local preferences.
+- **Download tasks** — file name, source URL, destination, progress, and task state are stored in the app's Application Support directory. In-progress segments are kept in Caches until the task completes, is cancelled, or is deleted.
+- **Website data** — cookies, cache, and local storage created by sites you visit are managed by Apple's WebKit and remain in the app's WebKit data store until you clear browsing data or delete the app.
+- **LAN sharing** — the access code and local link exist only while sharing is running. They are generated for the session and are not uploaded anywhere.
+
+You can remove this data by deleting files in the app, clearing browsing data in Settings, or deleting BeeBolt from your device.
+
+## Network Connections
+
+BeeBolt connects to the network only for actions you start:
+
+- Loading a page in the built-in browser
+- Sending a search query to the search engine you selected
+- Downloading a file from a URL you chose
+- Resolving or fetching page resources when you use Explorer
+- Serving files to another device while LAN sharing is on
+
+There is no BeeBolt-operated proxy, relay, or cloud storage in the middle. Requests go directly from your device to the destination you chose. Those destinations — websites, search engines, and download servers — receive the information any browser request would normally include, such as your IP address, request headers, and any cookies for that site. Their own privacy policies apply.
+
+## LAN Sharing
+
+LAN sharing starts a web server on your device for use by other devices on the same Wi-Fi network. The app accepts requests only when the requested host matches a local address reported by the device, and it rejects other hosts.
+
+- The server runs only while sharing is enabled and BeeBolt is in the foreground
+- The generated link contains a random access code; anyone with the link can manage the app's files until sharing stops
+- Traffic goes directly between your device and the other device on the local network
+- Nothing is routed through a developer-operated server
+
+Turn sharing off when you are done. The link and code stop working immediately.
+
+## Permissions
+
+BeeBolt requests access only when a feature needs it:
+
+- **Local Network** — required to start LAN sharing and accept connections from other devices
+- **Camera** — requested by iOS when a website in the built-in browser asks to take a photo for upload. BeeBolt does not use the camera on its own.
+- **Photos** — the system photo picker lets you choose images or videos to import. The picker runs out of process and BeeBolt receives only the items you select.
+- **Files** — the system document picker lets you choose a folder or file to import or export. BeeBolt receives access only to what you select.
+
+BeeBolt does not request location, contacts, health data, motion data, or microphone access for its own features. A website may ask for browser capabilities through iOS; those prompts come from the site and are controlled by you.
+
+## Third-Party Components
+
+BeeBolt uses open-source libraries for specific on-device tasks:
+
+- **ZIPFoundation** — creates and reads ZIP archives
+- **FFmpeg-Kit** — processes media that you choose to download
+- **WebResourceKit** — a local package used for page resource handling
+- **Apple system frameworks** — WebKit for browsing, URLSession for transfers, Quick Look for previews, and the system document picker for Files access
+
+These components run on your device. BeeBolt does not configure them to collect analytics, report usage, or contact a vendor server. No third-party advertising or analytics SDK is included.
+
+## What BeeBolt Does Not Do
+
+- It does not create a user profile or require an account
+- It does not track you across apps or websites
+- It does not use advertising identifiers
+- It does not sell or rent personal information
+- It does not upload your files or browsing history to a developer-operated server
+- It does not provide a catalogue of hosted content or bypass DRM, paywalls, or site access controls
+
+## Children's Privacy
+
+BeeBolt does not knowingly collect personal information from anyone, including children. Because the app has no account system and no developer-operated data collection, it does not build profiles of its users. Parents and guardians should still supervise which websites and files a child accesses, as they would with any browser.
+
+## Changes To This Policy
+
+If BeeBolt's data practices change, this page and the App Store privacy label will be updated before the change ships. The revision date at the top of this page shows when the text last changed.
+
+## Contact
+
+Questions about this policy or BeeBolt's privacy practices can be sent through the support link on the App Store listing.

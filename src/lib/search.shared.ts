@@ -39,6 +39,13 @@ export const searchTags = [
       cn: "KeepScreenOn",
     },
   },
+  {
+    value: "beebolt",
+    labels: {
+      en: "BeeBolt",
+      cn: "BeeBolt",
+    },
+  },
 ] as const;
 
 export type SearchLocale = "en" | "cn";

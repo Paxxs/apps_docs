@@ -1,0 +1,99 @@
+---
+title: Introduction
+description: BeeBolt combines a tabbed browser, multi-threaded downloads, and desktop-class LAN file management on iPhone and iPad.
+---
+
+# BeeBolt
+
+> A tabbed browser, a multi-threaded downloader, and a desktop-class file manager — with every file reachable from Apple's Files app and from any browser on your Wi-Fi.
+
+BeeBolt is built for the moment a file matters more than the page it came from. You find something while browsing, keep it, then organize it, compress it, or hand it to another device without leaving the app or reaching for a cable.
+
+## A Browser That Keeps Its Place
+
+The browser is a full tabbed workspace, not a single web view with a download button attached:
+
+- Open several tabs, switch between them, and close them from the tab overview
+- Browse history is recorded automatically and searchable; save sites you return to as bookmarks
+- Choose a default search engine or add your own
+- Request the desktop version of a site when the mobile layout is not enough
+- Pick a theme accent and preview the appearance before committing
+- Decide whether website sign-ins are remembered, and clear history, cache, and cookies when you want
+
+## Downloads Without Guesswork
+
+Anything the browser can save goes through one download engine:
+
+- Long-press a link, or paste an HTTP/HTTPS address to start a task
+- Watch progress, transferred bytes, and live speed for each task
+- Pause, resume, retry, cancel, or run batch pause and resume across the list
+- Up to four parallel segments when the server supports HTTP Range, with a single-connection fallback when it does not
+- Choose a default destination inside the app, or a folder granted through the system picker
+
+The Downloads tab is optional. When it is hidden, the download list stays one tap away from the browser toolbar, and completed files remain in Files.
+
+## Page Resources, When You Want Them
+
+Settings includes an optional **Explorer** mode. When it is on, the browser menu gains an **Insights** entry that lists the files and media the current page offers, so you can pick the one you want instead of hunting through the markup. Explorer is off by default; ordinary browsing and link downloads work without it.
+
+## A File Manager, Not A File List
+
+Files is a real workspace for the app's Documents folder:
+
+- Create folders, rename, move, copy, delete, and select several items at once
+- Search by name and sort ascending or descending
+- Preview supported formats in place, then share or export them
+- Import files from other apps, or pick photos and videos from the library
+- Compress files or folders into a ZIP, and extract ZIP archives with path-traversal protection
+- See folder and file counts, plus total size, at the bottom of the list
+
+## Every File Is In Apple's Files App
+
+BeeBolt exposes its Documents folder through the system document provider. In the Files app, open **On My iPhone/iPad → BeeBolt** and the same files appear there. Copy a file into that folder from Files, another app, or iCloud Drive, and it shows up in BeeBolt.
+
+This is the part that makes BeeBolt feel less like a sandbox and more like a folder on your device. Nothing needs to be exported first.
+
+## LAN Transfer, Desktop-Class
+
+The Sharing tab turns the device into a temporary file server for your local network:
+
+1. Turn on **LAN Sharing**
+2. Open the generated link on a computer, tablet, or phone on the same Wi-Fi
+3. Manage files in the browser — no companion app to install
+
+The link already carries the access code, so opening it is enough. From the web interface you can upload and download files, create folders, rename, move, copy, delete, and compress or extract ZIP archives.
+
+Two web styles are available:
+
+- **Modern** — the default. A desktop-class file manager with a sidebar, list and grid views, drag-and-drop, context menus, multi-selection, and keyboard shortcuts.
+- **Classic** — a simpler page for quick transfers.
+
+Sharing keeps the screen awake and offers a black-screen mode for long sessions. It stops when the app leaves the foreground, and the link stops working when sharing is turned off.
+
+## Built-In Media Handling
+
+When Explorer is enabled in Settings, the browser can list the media and files a page offers, so a video or attachment can be picked without hunting through page markup. Media downloads and conversions run on-device with the bundled FFmpeg engine.
+
+## Privacy At A Glance
+
+- No BeeBolt account, sign-in, subscription, or in-app purchase
+- No analytics backend, advertising backend, or third-party analytics/ad SDK
+- Browsing and downloads connect directly to the sites you choose
+- Files, history, bookmarks, and task metadata stay on the device
+
+Read the privacy policy page in this section for the full picture.
+
+## Requirements
+
+- iPhone and iPad running iOS / iPadOS 17.1 or later
+- A local Wi-Fi network for LAN transfer
+- An HTTP or HTTPS source for direct downloads
+
+## Limits Worth Knowing
+
+- Multi-threading depends on server support for range requests; it is not a guaranteed speed increase
+- Resuming requires the server to accept range requests and the file to remain unchanged
+- Long background transfers are not guaranteed; keep BeeBolt in the foreground for large files
+- LAN sharing runs only while the app is in the foreground
+- The LAN web uploader accepts individual files, not whole folders
+- Downloads must be content you are allowed to access; BeeBolt does not bypass DRM, paywalls, or site restrictions
