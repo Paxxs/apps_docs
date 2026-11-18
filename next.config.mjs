@@ -10,7 +10,7 @@ const repoRoot = dirname(fileURLToPath(import.meta.url));
 
 /** @type {import('next').NextConfig} */
 const config = {
-  output: "export",
+  output: process.env.NEXT_PUBLIC_ENABLE_AI_SEARCH === "true" ? undefined : "export",
   reactStrictMode: true,
   trailingSlash: true,
   images: {

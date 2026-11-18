@@ -19,6 +19,7 @@ import {
   Send,
   X,
 } from "lucide-react";
+import { withBasePath } from "@/lib/shared";
 import { cn } from "../../lib/cn";
 import { buttonVariants } from "../ui/button";
 import { useChat, type UseChatHelpers } from "@ai-sdk/react";
@@ -354,7 +355,7 @@ export function AISearch({ children }: { children: ReactNode }) {
   const chat = useChat<ChatUIMessage>({
     id: "search",
     transport: new DefaultChatTransport({
-      api: "/api/chat",
+      api: withBasePath("/api/chat"),
     }),
   });
 

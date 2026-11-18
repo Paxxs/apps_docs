@@ -1,15 +1,16 @@
 import { createOpenRouter } from "@openrouter/ai-sdk-provider";
 import {
   convertToModelMessages,
+  createUIMessageStreamResponse,
   stepCountIs,
   streamText,
   tool,
-  type UIMessage,
+  toUIMessageStream,
 } from "ai";
 import { z } from "zod";
 import { source } from "@/lib/source";
 import { Document, type DocumentData } from "flexsearch";
-import { ChatUIMessage, SearchTool } from "../../../components/ai/search";
+import type { ChatUIMessage, SearchTool } from "../../../components/ai/search";
 
 interface CustomDocument extends DocumentData {
   url: string;
@@ -69,12 +70,12 @@ const systemPrompt = [
   "If you cannot find the answer in search results, say you do not know and suggest a better search query.",
 ].join("\n");
 
-export async function POST(req: Request, ctx: RouteContext<"/api/chat">) {
+export async function POST(req: Request) {
   const reqJson = await req.json();
 
   const result = streamText({
     model: openrouter.chat(
-      process.env.OPENROUTER_MODEL ?? "anthropic/claude-3.5-sonnet",
+      process.env.OPENROUTER_MODEL ?? "anthropic/claude-sonnet-5.5",
     ),
     stopWhen: stepCountIs(5),
     tools: {
@@ -95,7 +96,9 @@ export async function POST(req: Request, ctx: RouteContext<"/api/chat">) {
     toolChoice: "auto",
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 
 const searchTool = tool({
