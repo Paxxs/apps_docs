@@ -1,0 +1,6 @@
+{
+  "title": "LastTime",
+  "description": "用來記錄週期性生活維護事項上次完成時間的儀表板。",
+  "root": true,
+  "icon": "GalleryHorizontal"
+}

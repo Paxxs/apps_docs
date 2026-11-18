@@ -1,0 +1,6 @@
+{
+  "title": "TextRelay",
+  "description": "暫存純文字的簡易中轉工具，提供完全在本機執行的智慧文字分段功能。",
+  "icon": "RemoveFormatting",
+  "root": true
+}

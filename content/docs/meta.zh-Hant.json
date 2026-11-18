@@ -1,0 +1,11 @@
+{
+  "description": "AppPro 各應用程式的產品文件、使用說明和隱私權政策。",
+  "pages": [
+    "clip-smart",
+    "last-time",
+    "exif-snap",
+    "text-relay",
+    "keep-screen-on",
+    "beebolt"
+  ]
+}

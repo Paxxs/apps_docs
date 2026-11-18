@@ -1,0 +1,6 @@
+{
+  "title": "ExifSnap",
+  "description": "快速檢視、複製與修改圖片 EXIF 中繼資料。",
+  "icon": "ImageUp",
+  "root": true
+}
