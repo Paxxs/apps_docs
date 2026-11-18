@@ -7,9 +7,9 @@ import {
   tool,
   toUIMessageStream,
 } from "ai";
+import { Document, type DocumentData } from "flexsearch";
 import { z } from "zod";
 import { source } from "@/lib/source";
-import { Document, type DocumentData } from "flexsearch";
 import type { ChatUIMessage, SearchTool } from "../../../components/ai/search";
 
 interface CustomDocument extends DocumentData {

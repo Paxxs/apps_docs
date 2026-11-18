@@ -1,4 +1,20 @@
 "use client";
+import { type UseChatHelpers, useChat } from "@ai-sdk/react";
+import { Presence } from "@radix-ui/react-presence";
+import {
+  DefaultChatTransport,
+  type Tool,
+  type UIMessage,
+  type UIToolInvocation,
+} from "ai";
+import {
+  Loader2,
+  MessageCircleIcon,
+  RefreshCw,
+  SearchIcon,
+  Send,
+  X,
+} from "lucide-react";
 import {
   type ComponentProps,
   createContext,
@@ -11,26 +27,10 @@ import {
   useRef,
   useState,
 } from "react";
-import {
-  Loader2,
-  MessageCircleIcon,
-  RefreshCw,
-  SearchIcon,
-  Send,
-  X,
-} from "lucide-react";
 import { withBasePath } from "@/lib/shared";
 import { cn } from "../../lib/cn";
-import { buttonVariants } from "../ui/button";
-import { useChat, type UseChatHelpers } from "@ai-sdk/react";
-import {
-  DefaultChatTransport,
-  type Tool,
-  type UIMessage,
-  type UIToolInvocation,
-} from "ai";
 import { Markdown } from "../markdown";
-import { Presence } from "@radix-ui/react-presence";
+import { buttonVariants } from "../ui/button";
 
 export type ChatUIMessage = UIMessage<
   never,
@@ -71,8 +71,8 @@ export function AISearchPanelHeader({
       </div>
 
       <button
+        type="button"
         aria-label="Close"
-        tabIndex={-1}
         className={cn(
           buttonVariants({
             size: "icon-sm",
@@ -312,7 +312,7 @@ function Message({
   }
 
   return (
-    <div onClick={(e) => e.stopPropagation()} {...props}>
+    <div {...props}>
       <p
         className={cn(
           "mb-1 text-sm font-medium text-fd-muted-foreground",
@@ -375,6 +375,7 @@ export function AISearchTrigger({
 
   return (
     <button
+      type="button"
       data-state={open ? "open" : "closed"}
       className={cn(
         position === "float" && [
@@ -417,7 +418,9 @@ export function AISearchPanel() {
         }`}
       </style>
       <Presence present={open}>
-        <div
+        <button
+          type="button"
+          aria-label="Close chat"
           className={cn(
             "fixed inset-0 z-30 backdrop-blur-xs bg-fd-overlay lg:hidden",
             open ? "animate-fd-fade-in" : "animate-fd-fade-out",
@@ -473,7 +476,7 @@ export function AISearchPanelList({
       {messages.length === 0 ? (
         <div className="text-sm text-fd-muted-foreground/80 size-full flex flex-col items-center justify-center text-center gap-2">
           <MessageCircleIcon fill="currentColor" stroke="none" />
-          <p onClick={(e) => e.stopPropagation()}>Start a new chat below.</p>
+          <p>Start a new chat below.</p>
         </div>
       ) : (
         <div className="flex flex-col px-3 gap-4">
@@ -516,9 +519,11 @@ export function useHotKey() {
 }
 
 export function useAISearchContext() {
-  return use(Context)!;
+  const context = use(Context);
+  if (!context) throw new Error("AI search requires the AISearch provider");
+  return context;
 }
 
 function useChatContext() {
-  return use(Context)!.chat;
+  return useAISearchContext().chat;
 }
