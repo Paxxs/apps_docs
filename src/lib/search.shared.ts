@@ -8,7 +8,7 @@ export const searchTags = [
     value: "clip-smart",
     labels: {
       en: "ClipSmart",
-      cn: "ClipSmart",
+      "zh-Hans": "ClipSmart",
       "zh-Hant": "ClipSmart",
     },
   },
@@ -16,7 +16,7 @@ export const searchTags = [
     value: "last-time",
     labels: {
       en: "LastTime",
-      cn: "LastTime",
+      "zh-Hans": "LastTime",
       "zh-Hant": "LastTime",
     },
   },
@@ -24,7 +24,7 @@ export const searchTags = [
     value: "exif-snap",
     labels: {
       en: "ExifSnap",
-      cn: "ExifSnap",
+      "zh-Hans": "ExifSnap",
       "zh-Hant": "ExifSnap",
     },
   },
@@ -32,7 +32,7 @@ export const searchTags = [
     value: "text-relay",
     labels: {
       en: "TextRelay",
-      cn: "TextRelay",
+      "zh-Hans": "TextRelay",
       "zh-Hant": "TextRelay",
     },
   },
@@ -40,7 +40,7 @@ export const searchTags = [
     value: "keep-screen-on",
     labels: {
       en: "KeepScreenOn",
-      cn: "KeepScreenOn",
+      "zh-Hans": "KeepScreenOn",
       "zh-Hant": "KeepScreenOn",
     },
   },
@@ -48,19 +48,19 @@ export const searchTags = [
     value: "beebolt",
     labels: {
       en: "BeeBolt",
-      cn: "BeeBolt",
+      "zh-Hans": "BeeBolt",
       "zh-Hant": "BeeBolt",
     },
   },
 ] as const;
 
-export type SearchLocale = "en" | "cn" | "zh-Hant";
+export type SearchLocale = "en" | "zh-Hans" | "zh-Hant";
 export type SearchTagValue = (typeof searchTags)[number]["value"];
 
 const searchTagValues = new Set<string>(searchTags.map((tag) => tag.value));
 
 function getSupportedSearchLocale(locale: string): SearchLocale {
-  if (locale === "cn") return "cn";
+  if (locale === "zh-Hans") return "zh-Hans";
   if (locale === "zh-Hant") return "zh-Hant";
   return "en";
 }

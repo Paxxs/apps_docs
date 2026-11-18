@@ -11,7 +11,7 @@ export const translations = i18n
     en: {
       displayName: "English",
     },
-    cn: {
+    "zh-Hans": {
       displayName: "简体中文",
     },
     "zh-Hant": {

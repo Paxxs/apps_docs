@@ -16,8 +16,8 @@ describe("docs static route params", () => {
   test("maps prefixed docs pages to non-default language params only", () => {
     const params = getPrefixedDocsStaticParams();
 
-    expect(params).toContainEqual({ lang: "cn", slug: [] });
-    expect(params).toContainEqual({ lang: "cn", slug: ["exif-snap"] });
+    expect(params).toContainEqual({ lang: "zh-Hans", slug: [] });
+    expect(params).toContainEqual({ lang: "zh-Hans", slug: ["exif-snap"] });
     expect(params).toContainEqual({ lang: "zh-Hant", slug: [] });
     expect(params).toContainEqual({
       lang: "zh-Hant",

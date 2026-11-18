@@ -31,7 +31,7 @@ describe("search shared configuration", () => {
       "KeepScreenOn",
       "BeeBolt",
     ]);
-    expect(getSearchTagItems("cn").map((tag) => tag.name)).toEqual([
+    expect(getSearchTagItems("zh-Hans").map((tag) => tag.name)).toEqual([
       "ClipSmart",
       "LastTime",
       "ExifSnap",

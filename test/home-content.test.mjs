@@ -27,7 +27,7 @@ describe("localized home content", () => {
   });
 
   test("returns localized Chinese home copy", () => {
-    const content = getHomeContent("cn");
+    const content = getHomeContent("zh-Hans");
 
     expect(content.brand).toBe("APP·PRO");
     expect(content.tagline).toBe(
@@ -39,7 +39,7 @@ describe("localized home content", () => {
     ]);
     expect(content.primaryAction).toEqual({
       label: "浏览文档",
-      href: "/cn/docs",
+      href: "/zh-Hans/docs",
     });
     expect(content.secondaryAction).toEqual({
       label: "访问 GitHub",
@@ -75,7 +75,7 @@ describe("localized home content", () => {
       title: "APP·PRO Docs",
       docsLabel: "Documentation",
     });
-    expect(getNavContent("cn")).toEqual({
+    expect(getNavContent("zh-Hans")).toEqual({
       title: "APP·PRO",
       docsLabel: "文档首页",
     });

@@ -26,7 +26,7 @@ const localizedHomeContent = {
       docsLabel: "Documentation",
     },
   },
-  cn: {
+  "zh-Hans": {
     brand: "APP·PRO",
     tagline: "精选软件合集，为你的数字生活提供优雅解决方案",
     sections: [
@@ -73,7 +73,7 @@ const localizedHomeContent = {
 type SupportedLocale = keyof typeof localizedHomeContent;
 
 function getSupportedLocale(locale: string): SupportedLocale {
-  if (locale === "cn") return "cn";
+  if (locale === "zh-Hans") return "zh-Hans";
   if (locale === "zh-Hant") return "zh-Hant";
   return "en";
 }

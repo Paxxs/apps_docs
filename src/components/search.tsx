@@ -27,7 +27,7 @@ export default function DefaultSearchDialog(props: SharedProps) {
     locale,
     tag,
     search:
-      locale === "cn" || locale === "zh-Hant"
+      locale === "zh-Hans" || locale === "zh-Hant"
         ? { threshold: 0, tolerance: 0 }
         : undefined,
   });

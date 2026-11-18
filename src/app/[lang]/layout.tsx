@@ -9,7 +9,7 @@ const inter = Inter({
 
 const htmlLanguages: Record<string, string> = {
   en: "en",
-  cn: "zh-CN",
+  "zh-Hans": "zh-Hans",
   "zh-Hant": "zh-Hant",
 };
 
