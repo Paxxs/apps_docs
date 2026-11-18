@@ -1,8 +1,8 @@
-import { getPageImage, source } from "@/lib/source";
+import { generate as DefaultImage } from "fumadocs-ui/og";
 import { notFound } from "next/navigation";
 import { ImageResponse } from "next/og";
-import { generate as DefaultImage } from "fumadocs-ui/og";
 import { appName } from "@/lib/shared";
+import { getAssetPage, getPageImage, source } from "@/lib/source";
 
 export const revalidate = false;
 
@@ -11,7 +11,7 @@ export async function GET(
   { params }: RouteContext<"/og/docs/[...slug]">,
 ) {
   const { slug } = await params;
-  const page = source.getPage(slug.slice(0, -1));
+  const page = getAssetPage(slug);
   if (!page) notFound();
 
   return new ImageResponse(
@@ -29,7 +29,6 @@ export async function GET(
 
 export function generateStaticParams() {
   return source.getPages().map((page) => ({
-    lang: page.locale,
     slug: getPageImage(page).segments,
   }));
 }

@@ -3,7 +3,7 @@ import { loader } from "fumadocs-core/source";
 import { lucideIconsPlugin } from "fumadocs-core/source/lucide-icons";
 import { icons } from "lucide-react";
 import { createElement } from "react";
-import { i18n } from "@/lib/i18n";
+import { getPrefixedLanguages, i18n } from "@/lib/i18n";
 import {
   docsContentRoute,
   docsImageRoute,
@@ -29,8 +29,22 @@ export const source = loader({
   i18n,
 });
 
+function getAssetSlugs(page: (typeof source)["$inferPage"]) {
+  return page.locale && page.locale !== i18n.defaultLanguage
+    ? [page.locale, ...page.slugs]
+    : page.slugs;
+}
+
+export function getAssetPage(segments: string[] = []) {
+  const slugs = segments.slice(0, -1);
+  const [first] = slugs;
+  return getPrefixedLanguages().some((language) => language === first)
+    ? source.getPage(slugs.slice(1), first)
+    : source.getPage(slugs, i18n.defaultLanguage);
+}
+
 export function getPageImage(page: (typeof source)["$inferPage"]) {
-  const segments = [...page.slugs, "image.png"];
+  const segments = [...getAssetSlugs(page), "image.png"];
 
   return {
     segments,
@@ -39,7 +53,7 @@ export function getPageImage(page: (typeof source)["$inferPage"]) {
 }
 
 export function getPageMarkdownUrl(page: (typeof source)["$inferPage"]) {
-  const segments = [...page.slugs, "content.md"];
+  const segments = [...getAssetSlugs(page), "content.md"];
 
   return {
     segments,

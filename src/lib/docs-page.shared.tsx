@@ -56,6 +56,7 @@ export function getDocsMetadata(slug: DocsSlug, lang: string): Metadata {
   if (!page) notFound();
 
   return {
+    metadataBase: new URL("https://apps.apppro.dev"),
     title: page.data.title,
     description: page.data.description,
     openGraph: {
