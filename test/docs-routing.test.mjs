@@ -18,6 +18,11 @@ describe("docs static route params", () => {
 
     expect(params).toContainEqual({ lang: "cn", slug: [] });
     expect(params).toContainEqual({ lang: "cn", slug: ["exif-snap"] });
+    expect(params).toContainEqual({ lang: "zh-Hant", slug: [] });
+    expect(params).toContainEqual({
+      lang: "zh-Hant",
+      slug: ["exif-snap"],
+    });
     expect(params.some((param) => param.lang === "en")).toBe(false);
   });
 });

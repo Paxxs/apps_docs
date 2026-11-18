@@ -26,7 +26,10 @@ export default function DefaultSearchDialog(props: SharedProps) {
     from: searchApiUrl,
     locale,
     tag,
-    search: locale === "cn" ? { threshold: 0, tolerance: 0 } : undefined,
+    search:
+      locale === "cn" || locale === "zh-Hant"
+        ? { threshold: 0, tolerance: 0 }
+        : undefined,
   });
 
   return (

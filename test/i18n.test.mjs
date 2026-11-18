@@ -19,6 +19,8 @@ describe("i18n route helpers", () => {
   test("keeps non-default locale prefixes in URLs", () => {
     expect(getLocalizedHref("cn")).toBe("/cn");
     expect(getLocalizedHref("cn", "/docs")).toBe("/cn/docs");
+    expect(getLocalizedHref("zh-Hant")).toBe("/zh-Hant");
+    expect(getLocalizedHref("zh-Hant", "/docs")).toBe("/zh-Hant/docs");
   });
 
   test("removes an existing locale prefix when switching back to the default language", () => {
@@ -31,6 +33,9 @@ describe("i18n route helpers", () => {
   });
 
   test("generates prefixed static language params for non-default languages only", () => {
-    expect(getPrefixedLanguageStaticParams()).toEqual([{ lang: "cn" }]);
+    expect(getPrefixedLanguageStaticParams()).toEqual([
+      { lang: "cn" },
+      { lang: "zh-Hant" },
+    ]);
   });
 });

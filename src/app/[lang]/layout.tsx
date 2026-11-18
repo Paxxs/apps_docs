@@ -7,13 +7,23 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const htmlLanguages: Record<string, string> = {
+  en: "en",
+  cn: "zh-CN",
+  "zh-Hant": "zh-Hant",
+};
+
 export default async function Layout({
   params,
   children,
 }: LayoutProps<"/[lang]">) {
   const { lang } = await params;
   return (
-    <html lang={lang} className={inter.className} suppressHydrationWarning>
+    <html
+      lang={htmlLanguages[lang] ?? lang}
+      className={inter.className}
+      suppressHydrationWarning
+    >
       <body className="flex flex-col min-h-screen">
         <AppRootProvider locale={lang}>{children}</AppRootProvider>
       </body>

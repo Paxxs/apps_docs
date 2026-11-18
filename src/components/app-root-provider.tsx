@@ -3,11 +3,17 @@
 import { i18nProvider } from "fumadocs-ui/i18n";
 import { RootProvider } from "fumadocs-ui/provider/next";
 import { usePathname } from "next/navigation";
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import SearchDialog from "@/components/search";
 import { getLocalizedHref } from "@/lib/i18n";
 import { translations } from "@/lib/layout.shared";
 import { withBasePath } from "@/lib/shared";
+
+const htmlLanguages: Record<string, string> = {
+  en: "en",
+  cn: "zh-CN",
+  "zh-Hant": "zh-Hant",
+};
 
 export function AppRootProvider({
   children,
@@ -17,6 +23,11 @@ export function AppRootProvider({
   locale: string;
 }) {
   const pathname = usePathname();
+  const htmlLanguage = htmlLanguages[locale] ?? locale;
+
+  useEffect(() => {
+    document.documentElement.lang = htmlLanguage;
+  }, [htmlLanguage]);
 
   return (
     <RootProvider
@@ -29,6 +40,11 @@ export function AppRootProvider({
         },
       }}
       search={{ SearchDialog }}
+      theme={{
+        attribute: "class",
+        defaultTheme: "system",
+        enableSystem: true,
+      }}
     >
       {children}
     </RootProvider>

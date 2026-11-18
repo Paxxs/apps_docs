@@ -48,6 +48,28 @@ describe("localized home content", () => {
     expect(content.footerNote).toBe("用心设计，精心打磨");
   });
 
+  test("returns localized Traditional Chinese home copy", () => {
+    const content = getHomeContent("zh-Hant");
+
+    expect(content.brand).toBe("APP·PRO");
+    expect(content.tagline).toBe(
+      "精選軟體合集，為你的數位生活提供優雅解決方案",
+    );
+    expect(content.sections.map((section) => section.title)).toEqual([
+      "我們的理念",
+      "探索產品組合",
+    ]);
+    expect(content.primaryAction).toEqual({
+      label: "瀏覽文件",
+      href: "/zh-Hant/docs",
+    });
+    expect(content.secondaryAction).toEqual({
+      label: "造訪 GitHub",
+      href: "https://github.com/Paxxs",
+    });
+    expect(content.footerNote).toBe("用心設計，精心琢磨");
+  });
+
   test("returns localized nav labels without layout concerns", () => {
     expect(getNavContent("en")).toEqual({
       title: "APP·PRO Docs",
@@ -56,6 +78,10 @@ describe("localized home content", () => {
     expect(getNavContent("cn")).toEqual({
       title: "APP·PRO",
       docsLabel: "文档首页",
+    });
+    expect(getNavContent("zh-Hant")).toEqual({
+      title: "APP·PRO",
+      docsLabel: "文件首頁",
     });
   });
 });

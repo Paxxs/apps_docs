@@ -47,12 +47,35 @@ const localizedHomeContent = {
       docsLabel: "文档首页",
     },
   },
+  "zh-Hant": {
+    brand: "APP·PRO",
+    tagline: "精選軟體合集，為你的數位生活提供優雅解決方案",
+    sections: [
+      {
+        title: "我們的理念",
+        body: "簡約而精緻，我們專注於使用者體驗與功能之間的完美平衡。每一款應用程式都經過細緻設計，既滿足現代使用者的需求，也保持直觀易用。",
+      },
+      {
+        title: "探索產品組合",
+        body: "瀏覽我們精心整理的軟體文件，了解每款應用程式如何改善你的工作流程。從效率工具到創意應用程式，我們的產品線涵蓋多樣化的數位需求。",
+      },
+    ],
+    primaryActionLabel: "瀏覽文件",
+    secondaryActionLabel: "造訪 GitHub",
+    footerNote: "用心設計，精心琢磨",
+    nav: {
+      title: "APP·PRO",
+      docsLabel: "文件首頁",
+    },
+  },
 } as const;
 
 type SupportedLocale = keyof typeof localizedHomeContent;
 
 function getSupportedLocale(locale: string): SupportedLocale {
-  return locale === "cn" ? "cn" : "en";
+  if (locale === "cn") return "cn";
+  if (locale === "zh-Hant") return "zh-Hant";
+  return "en";
 }
 
 export function getHomeContent(locale: string) {

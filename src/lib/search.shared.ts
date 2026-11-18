@@ -9,6 +9,7 @@ export const searchTags = [
     labels: {
       en: "ClipSmart",
       cn: "ClipSmart",
+      "zh-Hant": "ClipSmart",
     },
   },
   {
@@ -16,6 +17,7 @@ export const searchTags = [
     labels: {
       en: "LastTime",
       cn: "LastTime",
+      "zh-Hant": "LastTime",
     },
   },
   {
@@ -23,6 +25,7 @@ export const searchTags = [
     labels: {
       en: "ExifSnap",
       cn: "ExifSnap",
+      "zh-Hant": "ExifSnap",
     },
   },
   {
@@ -30,6 +33,7 @@ export const searchTags = [
     labels: {
       en: "TextRelay",
       cn: "TextRelay",
+      "zh-Hant": "TextRelay",
     },
   },
   {
@@ -37,6 +41,7 @@ export const searchTags = [
     labels: {
       en: "KeepScreenOn",
       cn: "KeepScreenOn",
+      "zh-Hant": "KeepScreenOn",
     },
   },
   {
@@ -44,17 +49,20 @@ export const searchTags = [
     labels: {
       en: "BeeBolt",
       cn: "BeeBolt",
+      "zh-Hant": "BeeBolt",
     },
   },
 ] as const;
 
-export type SearchLocale = "en" | "cn";
+export type SearchLocale = "en" | "cn" | "zh-Hant";
 export type SearchTagValue = (typeof searchTags)[number]["value"];
 
 const searchTagValues = new Set<string>(searchTags.map((tag) => tag.value));
 
 function getSupportedSearchLocale(locale: string): SearchLocale {
-  return locale === "cn" ? "cn" : "en";
+  if (locale === "cn") return "cn";
+  if (locale === "zh-Hant") return "zh-Hant";
+  return "en";
 }
 
 export function getSearchTagValue(
