@@ -57,7 +57,7 @@ export function getPageMarkdownUrl(page: (typeof source)["$inferPage"]) {
 
   return {
     segments,
-    url: withBasePath(`${docsContentRoute}/${segments.join("/")}`),
+    url: `${docsContentRoute}/${segments.join("/")}`,
   };
 }
 
