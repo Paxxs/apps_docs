@@ -1,6 +1,6 @@
 {
   "title": "BeeBolt",
-  "description": "A tabbed browser, multi-threaded downloader, and desktop-class LAN file manager.",
+  "description": "A file manager for iPhone and iPad with desktop-class file management over Wi-Fi and a tabbed browser.",
   "icon": "FolderSync",
   "root": true
 }

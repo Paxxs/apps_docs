@@ -1,6 +1,6 @@
 {
   "title": "BeeBolt",
-  "description": "多标签浏览器、多线程下载器与桌面级局域网文件管理器",
+  "description": "iPhone 与 iPad 文件管理器，支持桌面级局域网文件管理和多标签浏览。",
   "icon": "FolderSync",
   "root": true
 }
